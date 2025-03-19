@@ -87,10 +87,13 @@ if ($result->num_rows > 0) {
             </div>
         <?php
         
+        $kurtsoa = isset($_GET["kurtsoa"]) ? $_GET["kurtsoa"] : 1;
         $xmlFile = 'comments.xml';
 
+        
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comments'])) {
-            $comment = $_POST['comments']; 
+            $comment = trim($_POST['comments']);
         
             if (file_exists($xmlFile)) {
                 $xml = simplexml_load_file($xmlFile);
@@ -99,13 +102,48 @@ if ($result->num_rows > 0) {
             }
         
             $newComment = $xml->addChild('comment');
-            $newComment->addChild('text', $comment);
+            $newComment->addChild('text', htmlspecialchars($comment));
+            $newComment->addAttribute('kurtsoa', $kurtsoa); 
         
             file_put_contents($xmlFile, $xml->asXML());
         }
-        ?>
+         $comments = [];
+            if (file_exists($xmlFile)) {
+        $xml = simplexml_load_file($xmlFile);
+            foreach ($xml->comment as $comment) {
+             if ((int) $comment['kurtsoa'] === (int) $kurtsoa) { 
+              $comments[] = [
+                'text' => (string) $comment->text
+                 ];
+        }
+    }
+}
+ ?>
+               <ul>
+                      <?php foreach ($comments as $comment): ?>
+                        <li></strong> <?= $comment['text'] ?></li>
+                      <?php endforeach; ?>
+                 </ul>
+        
+        
+    </div>
+</div>
 
-                ?>
+<script>
+document.querySelectorAll(".toggleComments").forEach(button => {
+    button.addEventListener("click", function() {
+        var sectionId = "commentsSection_" + this.getAttribute("data-id");
+        var commentsDiv = document.getElementById(sectionId);
+        if (commentsDiv.style.display === "none") {
+            commentsDiv.style.display = "block";
+            this.textContent = "Ezkutatu Iruzkinak";
+        } else {
+            commentsDiv.style.display = "none";
+            this.textContent = "Ikusi Iruzkinak";
+        }
+    });
+});
+</script>
             <?php
             if ($scanned) {
             ?>

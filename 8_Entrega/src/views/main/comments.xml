@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
 <comments>
-  <comment><text>Muy buen aporte, pero podrías profundizar más en el tema.</text></comment>
-  <comment><text>Me gustaría ver más ejemplos para entender mejor.</text></comment>
-  <comment><text>Excelente explicación, clara y concisa.</text></comment>
-  <comment><text>Creo que podrías añadir referencias para respaldar la información.</text></comment>
-  <comment><text>El formato del texto podría mejorar para facilitar la lectura.</text></comment>
-  <comment><text>Interesante punto de vista, pero falta un poco de contexto.</text></comment>
-  <comment><text>Buena redacción, aunque hay algunos errores gramaticales.</text></comment>
-</comments>
+  <comment kurtsoa="2"><text>Muy buen aporte, pero podr&#xED;as profundizar m&#xE1;s en el tema.</text></comment>
+  <comment><text>Excelente explicaci&#xF3;n, clara y concisa.</text></comment>
+  <comment kurtsoa="3"><text>Creo que podr&#xED;as a&#xF1;adir referencias para respaldar la informaci&#xF3;n.</text></comment>
+<comment kurtsoa="1"><text>Me gusta el torrezno.</text></comment><comment kurtsoa="1"><text>Me gusta el torrezno.</text></comment><comment kurtsoa="1"><text>Bideoa gustoko dut.</text></comment></comments>
