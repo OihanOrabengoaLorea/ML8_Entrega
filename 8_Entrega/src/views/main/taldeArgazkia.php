@@ -5,9 +5,9 @@ $APP_DIR = $env["APP_DIR"];
 
 require_once($_SERVER["DOCUMENT_ROOT"] . $APP_DIR  . '/src/views/parts/layouts/layoutTop.php');//Aplikazioaren karpeta edozein lekutatik atzitzeko.
 
-require_once(APP_DIR  . '/src/views/parts/sidebar.php');
+require_once(__DIR__  . '/src/views/parts/sidebar.php');
 
-require_once(APP_DIR  . '/src/views/parts/header.php');
+require_once(__DIR__  . '/src/views/parts/header.php');
 
 ?>
 
@@ -17,6 +17,6 @@ require_once(APP_DIR  . '/src/views/parts/header.php');
 
 <?php
 
-require_once(APP_DIR  . '/src/views/parts/layouts/layoutBottom.php');
+require_once(__DIR__ . '/src/views/parts/layouts/layoutBottom.php');
 
 ?>

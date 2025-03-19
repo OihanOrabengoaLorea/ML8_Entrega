@@ -86,8 +86,24 @@ if ($result->num_rows > 0) {
                 </form>
             </div>
         <?php
+        
+        $xmlFile = 'comments.xml';
 
-        $xmlFile = 'komentarioak.xml';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comments'])) {
+            $comment = $_POST['comments']; 
+        
+            if (file_exists($xmlFile)) {
+                $xml = simplexml_load_file($xmlFile);
+            } else {
+                $xml = new SimpleXMLElement('<comments></comments>');
+            }
+        
+            $newComment = $xml->addChild('comment');
+            $newComment->addChild('text', $comment);
+        
+            file_put_contents($xmlFile, $xml->asXML());
+        }
+        ?>
 
                 ?>
             <?php
