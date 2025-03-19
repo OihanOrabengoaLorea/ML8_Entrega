@@ -63,6 +63,8 @@ function getZikloa($id)
 
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
+    }else{
+        echo "Todo correcto.";
     }
 
     $sql = "SELECT * FROM " . $dbName . ".zikloak WHERE id=".$id." ORDER BY laburbildura ASC";

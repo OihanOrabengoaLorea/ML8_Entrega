@@ -22,6 +22,8 @@ require_once(APP_DIR . '/src/views/parts/header.php');
         <th>Erantzun oker kop.</th>
         <th>Balorazio batazbestekoa (5etik)</th>
         <th>Baliogabekoak</th>
+        <th>Not work </th>
+        
     </tr>
     <?php
 

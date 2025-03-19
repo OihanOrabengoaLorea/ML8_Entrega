@@ -75,6 +75,21 @@ if ($result->num_rows > 0) {
                     </a>
                 </span>
             </div>
+            <div>
+    
+             <div class="comments_section">
+                <h3>Iruzkinak</h3>
+                 <form id="commentForm" method="post" action="">
+                 <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Zure iruzkina hemen idatzi..." required></textarea>
+                 <br>
+                 <button type="submit" id="submitComment">Iruzkinak bidali</button>
+                </form>
+            </div>
+        <?php
+
+        $xmlFile = 'komentarioak.xml';
+
+                ?>
             <?php
             if ($scanned) {
             ?>
